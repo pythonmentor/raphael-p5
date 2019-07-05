@@ -1,8 +1,8 @@
 # HealthChoice
 
-HealthChoice simplifies the lives of consumers who want to take care of their health and who face the plethora of products available on the market. Faced with nutrition tables that are not always clear and easy to read, the HealthChoice app helps you choose products that are equivalent to a given product, but that are healthier and offer a better nutritional score.
+HealthChoice simplifies the lives of consumers who want to take care of their health and who face the plethora of products available on the market. Confronted with nutrition tables that are not always clear and easy to read, the HealthChoice app lets you choose products that are equivalent to a given product, but healthier and wich offers a better nutritional score.
 
-Healthchoice therefore proposes to show you healthier products but also allows you to keep them close at hand so that you can find them easily. 
+Healthchoice therefore proposes to show you healthier products but also allows you to keep them close at hand so you can find them back easily. 
 
 *This app uses openfoodfacts public data.*
 
@@ -10,8 +10,8 @@ Healthchoice therefore proposes to show you healthier products but also allows y
 
 The user is on the terminal. The latter shows him the following choices:
 
-1. 1 - Which food do you want to replace?
-1. 2 - Find my substituted foods.
+1. Which food do you want to replace?
+2. Find my substituted foods.
 
 The user selects 1. The program asks the user the following questions and the user selects the answers:
 
