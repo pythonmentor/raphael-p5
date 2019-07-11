@@ -17,16 +17,50 @@ def main():
 
         productagent = ProductAgent(cleaner.products_cleaned)
         productagent.create_product_table()
-        productagent.save_product()
-
+        
         categoryagent = CategoryAgent(cleaner.products_cleaned)
         categoryagent.create_category_table()
-        categoryagent.save_category()
+        
+        productagent.create_product_cat_table()
 
-        storeagent = StoreAgent(cleaner.products_cleaned)
-        storeagent.create_store_table()
-        storeagent.save_store()
+        #storeagent = StoreAgent(cleaner.products_cleaned)
+        #storeagent.create_store_table()
+        
+        #productagent.create_product_store_table()
 
+
+        
+        for product in productagent.products_cleaned:
+                productagent.save_product(product)
+                rows = productagent.get_prod_id(product)
+                
+                for row in rows:
+                        product_id = row['barcode']
+                        
+                
+                for category in product["categories"].split(","):
+                        categoryagent.save_category(product, category)
+                        rows = categoryagent.get_cat_id(product, category)
+                        
+                        for row in rows:
+                                cat_id = row['cat_id']
+
+                if product_id and cat_id:
+                        productagent.add_asso(product_id, cat_id)
+
+                #for store in product["stores"].split(","):
+                        #storeagent.save_store(product, store)
+
+        
+        
+
+        
+
+        #storeagent = StoreAgent(cleaner.products_cleaned)
+        #storeagent.create_store_table()
+        #productagent.create_product_store_table()
+        #
+        
         print("OK man")
 
 if __name__ == "__main__":
